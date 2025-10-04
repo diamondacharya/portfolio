@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://diamondacharya.github.io/portfolio",
+  "homepage": "https://www.diamondacharya.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
