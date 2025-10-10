@@ -1,5 +1,6 @@
 .nonNavContainer { 
   padding-left: 100px;
+  padding-top: 70px;
 }
 
 .hero {
@@ -8,12 +9,6 @@
 }
 .profile-img {
   box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-}
-.social-links {
-  margin-top: 1em;
-  display: flex;
-  gap: 1em;
-  justify-content: center;
 }
 .about, .projects, .contact {
   margin: 2em auto;
