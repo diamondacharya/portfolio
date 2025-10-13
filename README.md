@@ -1,3 +1,16 @@
+# Introduction
+
+This repository represents my portfolio. It's hosted with GitHub Pages at https://www.diamonacharya.com. 
+
+## Technical Details 
+- Had to install the 'gh-pages' npm package. Running the command 'gh-pages -d dist' pushes the files in your 'dist' folder to the 'gh-pages' branch of your repository. This branch is automatically created when this command is first run. 
+- By default, GitHub Pages makes your site available at https://<username>.github.io/<repo-name>. I had to buy a custom domain name from a third party registrar, and add an ALIAS record mapping my custom url to diamondacharya.github.io. I also had to input my custom url into the 
+GitHub Pages Settings section of my GitHub repo. GitHub provided me the option to enforce HTTPS, so I didn't have to buy the SSL encryption add-on from the registrar. 
+
+## How to deploy 
+
+Run the 'yarn deploy' command from the main branch -- this is an alias to the 'gh-pages -d dist' command. This first builds the application by running the 'yarn predeploy' command. The production ready build output is placed in the 'dist' folder. The contents of this dist folder are then pusehd to the gh-pages branch of your repository. This almost immediately updates your production site. 
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
