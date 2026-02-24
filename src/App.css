@@ -1,17 +1,129 @@
 .nonNavContainer { 
   padding-left: 100px;
+  padding-right: 100px;
   padding-top: 70px;
+  padding-bottom: 40px;
 }
 
 .hero {
   margin-top: 2em;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
+  text-align: center;
 }
+
+.hero h2 {
+  margin-top: 0.5em;
+}
+
 .profile-img {
-  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
 }
-.about, .projects, .contact {
-  margin: 2em auto;
-  max-width: 600px;
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+.about, .experience, .education, .coursework, .skills, .contact {
+  margin: 3em auto;
+  max-width: 1000px;
   text-align: left;
 }
+
+.about p, .contact p {
+  color: #5f6368;
+  line-height: 1.7;
+  margin-bottom: 1em;
+}
+
+.contact strong {
+  color: #202124;
+}
+
+/* experience & education cards */
+.experience-card, .education-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e0e0e0;
+  height: 100%;
+}
+
+.experience-card:hover, .education-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.experience-card h4, .education-card h4 {
+  color: #202124;
+  font-size: 1.1em;
+}
+
+/* coursework cards */
+.course-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e8e8e8;
+  height: 100%;
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* skills chips */
+.skill-chip {
+  background-color: #e8f0fe !important;
+  color: #1967d2 !important;
+  font-weight: 500 !important;
+  font-size: 0.9em !important;
+  padding: 6px 12px !important;
+  height: auto !important;
+  transition: transform 0.2s, background-color 0.2s !important;
+}
+
+.skill-chip:hover {
+  background-color: #d2e3fc !important;
+  transform: scale(1.05);
+}
+
+/* section headings */
+h3 {
+  display: flex;
+  align-items: center;
+  color: #202124;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  border-bottom: 3px solid #1a73e8;
+  padding-bottom: 12px;
+}
+
+h4 {
+  color: #202124;
+  margin-bottom: 8px;
+}
+
+/* responsive adjustments */
+@media (max-width: 768px) {
+  .nonNavContainer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  .about, .experience, .education, .coursework, .skills, .contact {
+    margin: 2em auto;
+  }
+}
+
