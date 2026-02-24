@@ -5,4 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/', // makes sure asset paths are correctly resolved
   plugins: [react()],
+  server: {
+    port: 3000,        // custom port
+    open: true,        // auto-open browser
+  },
 })
