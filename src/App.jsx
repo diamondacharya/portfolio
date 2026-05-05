@@ -8,11 +8,18 @@ import Box from '@mui/material/Box'
 import MenuIcon from '@mui/icons-material/Menu'
 import Drawer from '@mui/material/Drawer'
 import profilePic from '/profilePic.jpg'
+import About from './components/About'
+import Education from './components/Education'
+import Experience from './components/Experience'
+import Skills from './components/Skills'
+import Contact from './components/Contact'
 import './App.css'
 
 const sections = [
   { id: 'about', label: 'About' },
-  { id: 'projects', label: 'Projects' },
+  { id: 'education', label: 'Education' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'skills', label: 'Skills' },
   { id: 'contact', label: 'Contact' },
 ]
 
@@ -36,7 +43,9 @@ const socialLinks = [
 
 const App = () => {
   const aboutRef = useRef(null)
-  const projectsRef = useRef(null)
+  const educationRef = useRef(null)
+  const experienceRef = useRef(null)
+  const skillsRef = useRef(null)
   const contactRef = useRef(null)
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [showAppBar, setShowAppBar] = useState(true)
@@ -65,11 +74,11 @@ const App = () => {
     <>
       <AppBar
         position="fixed"
-        color="default"
         elevation={1}
         sx={{
+          backgroundColor: '#2c3e50',
           transition: 'top 0.3s',
-          top: showAppBar ? 0 : '-64px', // hide AppBar by moving it up
+          top: showAppBar ? 0 : '-64px',
           display: { xs: 'block', md: 'block' }
         }}
       >
@@ -78,7 +87,7 @@ const App = () => {
             <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center' }}>
               <IconButton
                 edge="start"
-                color="inherit"
+                sx={{ color: 'white' }}
                 aria-label="menu"
                 onClick={() => setDrawerOpen(true)}
               >
@@ -89,13 +98,14 @@ const App = () => {
               {sections.map((section) => (
                 <Button
                   key={section.id}
-                  color="inherit"
                   onClick={() => {
                     if (section.id === 'about') handleScroll(aboutRef)
-                    if (section.id === 'projects') handleScroll(projectsRef)
+                    if (section.id === 'education') handleScroll(educationRef)
+                    if (section.id === 'experience') handleScroll(experienceRef)
+                    if (section.id === 'skills') handleScroll(skillsRef)
                     if (section.id === 'contact') handleScroll(contactRef)
                   }}
-                  sx={{ mx: 1 }}
+                  sx={{ mx: 1, color: 'white' }}
                 >
                   {section.label}
                 </Button>
@@ -132,7 +142,9 @@ const App = () => {
               fullWidth
               onClick={() => {
                 if (section.id === 'about') handleScroll(aboutRef)
-                if (section.id === 'projects') handleScroll(projectsRef)
+                if (section.id === 'education') handleScroll(educationRef)
+                if (section.id === 'experience') handleScroll(experienceRef)
+                if (section.id === 'skills') handleScroll(skillsRef)
                 if (section.id === 'contact') handleScroll(contactRef)
               }}
               sx={{ mb: 1 }}
@@ -163,45 +175,25 @@ const App = () => {
               src={profilePic}
               alt="profile picture"
               className="profile-img"
-              style={{ width: 120, borderRadius: '50%' }}
+              style={{ width: 180, borderRadius: '50%' }}
             />
             <h1>Diamond Acharya</h1>
             <h2>Software Engineer</h2>
           </section>
-          <section className="about" ref={aboutRef}>
-            <h3>About Me</h3>
-            <p>
-              Hello! My name is Diamond! This website in under construction. 
-              Hello! My name is Diamond! This website in under construction. 
-              Hello! My name is Diamond! This website in under construction. 
-              Hello! My name is Diamond! This website in under construction. 
-              Hello! My name is Diamond! This website in under construction. 
-              Hello! My name is Diamond! This website in under construction. 
-              Hello! My name is Diamond! This website in under construction. 
-              Hello! My name is Diamond! This website in under construction. 
-              Hello! My name is Diamond! This website in under construction. 
-            </p>
+          <section ref={aboutRef}>
+            <About />
           </section>
-          <section className="projects" ref={projectsRef}>
-            <h3>Projects</h3>
-            <ul>
-              <li> Project 1 </li>
-              <li> Project 2 </li>
-              <li> Project 1 </li>
-              <li> Project 1 </li>
-              <li> Project 1 </li>
-              <li> Project 1 </li>
-              <li> Project 2 </li>
-              <li> Project 2 </li>
-              <li> Project 2 </li>
-              <li> Project 2 </li>
-            </ul>
+          <section ref={educationRef}>
+            <Education />
           </section>
-          <section className="contact" ref={contactRef}>
-            <h3>Contact</h3>
-            <p>
-              Feel free to reach out via <a href="mailto:diamondacharya139@gmail.com" target="_blank" rel="noopener noreferrer">email</a>.
-            </p>
+          <section ref={experienceRef}>
+            <Experience />
+          </section>
+          {/* <section ref={skillsRef}>
+            <Skills />
+          </section> */}
+          <section ref={contactRef}>
+            <Contact />
           </section>
         </main>
       </div>
