@@ -2,8 +2,8 @@ import { Box, Typography } from '@mui/material'
 
 const About = () => {
   return (
-    <Box sx={{ my: 6, maxWidth: 800, mx: 'auto' }}>
-      <Typography variant="h4" component="h3" gutterBottom sx={{ fontWeight: 600 }}>
+    <Box sx={{ my: 6, maxWidth: 800, mx: 0 }}>
+      <Typography variant="h4" component="h3" gutterBottom sx={{ fontWeight: 500, letterSpacing: '-0.5px' }}>
         About Me
       </Typography>
       <Typography variant="body1" sx={{ lineHeight: 1.8, color: 'text.secondary' }}>

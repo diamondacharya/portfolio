@@ -55,8 +55,8 @@ const Education = () => {
   const [expandedBachelors, setExpandedBachelors] = useState(false)
 
   return (
-    <Box sx={{ my: 6, maxWidth: 1400, mx: 'auto' }}>
-      <Typography variant="h4" component="h3" gutterBottom sx={{ fontWeight: 600, mb: 4 }}>
+    <Box sx={{ my: 6, maxWidth: 1400, mx: 0 }}>
+      <Typography variant="h4" component="h3" gutterBottom sx={{ fontWeight: 500, letterSpacing: '-0.5px', mb: 4 }}>
         Education
       </Typography>
 

@@ -41,8 +41,8 @@ const Contact = () => {
   }
 
   return (
-    <Box sx={{ my: 6, maxWidth: 700, mx: 'auto' }}>
-      <Typography variant="h4" component="h3" gutterBottom sx={{ fontWeight: 600, mb: 2 }}>
+    <Box sx={{ my: 6, maxWidth: 700, mx: 0 }}>
+      <Typography variant="h4" component="h3" gutterBottom sx={{ fontWeight: 500, letterSpacing: '-0.5px', mb: 2 }}>
         Contact Me
       </Typography>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
