@@ -6,6 +6,7 @@ const mastersCoursesTaken = [
   { name: 'Information Security', url: 'https://omscs.gatech.edu/cs-6035-introduction-information-security' },
   { name: 'Database Systems Concepts and Design', url: 'https://omscs.gatech.edu/cs-6400-database-systems-concepts-and-design' },
   { name: 'Applied Cryptography', url: 'https://omscs.gatech.edu/cs-6260-applied-cryptography' },
+  { name: 'Machine Learning for Trading', url: 'https://omscs.gatech.edu/cs-7646-machine-learning-trading' },
 ]
 
 const mastersCoursesPlanned = [

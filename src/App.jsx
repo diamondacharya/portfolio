@@ -236,7 +236,7 @@ const App = () => {
           fontSize: '0.875rem',
           borderTop: '1px solid #ddd'
         }}>
-          Copyright © 2026 All rights reserved. Made by Diamond Acharya
+          Copyright © 2026. All rights reserved. Made by Diamond Acharya
         </footer>
       </div>
     </>
