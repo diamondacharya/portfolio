@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import { Box, Typography, TextField, Button, Paper, Alert } from '@mui/material'
-import SendIcon from '@mui/icons-material/Send'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -41,77 +39,138 @@ const Contact = () => {
   }
 
   return (
-    <Box sx={{ my: 6, maxWidth: 700, mx: 0 }}>
-      <Typography variant="h4" component="h3" gutterBottom sx={{ fontWeight: 500, letterSpacing: '-0.5px', mb: 2 }}>
-        Contact Me
-      </Typography>
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
-        Have a question or want to work together? Drop me a message!
-      </Typography>
+    <div style={{ margin: '48px 0', maxWidth: '1000px', paddingTop: '52px' }}>
+      <div className="section-header">
+        &lt;&lt; Contact Me &gt;&gt;
+      </div>
+      <p style={{ lineHeight: 1.8, color: '#666', marginBottom: '24px' }}>
+        Drop me a message!
+      </p>
 
-      <Paper elevation={3} sx={{ p: 4 }}>
+      <div style={{ padding: '24px', boxShadow: '0 3px 10px rgba(0,0,0,0.1)', borderRadius: '16px', backgroundColor: 'white' }}>
         {submitted && (
-          <Alert severity="success" sx={{ mb: 3 }}>
+          <div style={{
+            padding: '12px 16px',
+            backgroundColor: '#d4edda',
+            color: '#155724',
+            borderRadius: '4px',
+            marginBottom: '16px',
+            border: '1px solid #c3e6cb'
+          }}>
             Thanks for reaching out! Your email client should open shortly.
-          </Alert>
+          </div>
         )}
 
         <form onSubmit={handleSubmit}>
-          <TextField
-            fullWidth
-            label="Name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            sx={{ mb: 2 }}
-          />
+          {/* Name and Email side by side */}
+          <div style={{ display: 'flex', gap: '16px', marginBottom: '12px' }}>
+            <div style={{ flex: 1 }}>
+              <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.875rem', color: '#666' }}>
+                Name *
+              </label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                style={{
+                  width: '100%',
+                  padding: '10px',
+                  fontSize: '1rem',
+                  border: '1px solid #ccc',
+                  borderRadius: '4px',
+                  boxSizing: 'border-box'
+                }}
+              />
+            </div>
 
-          <TextField
-            fullWidth
-            label="Email"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            sx={{ mb: 2 }}
-          />
+            <div style={{ flex: 1 }}>
+              <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.875rem', color: '#666' }}>
+                Email *
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                style={{
+                  width: '100%',
+                  padding: '10px',
+                  fontSize: '1rem',
+                  border: '1px solid #ccc',
+                  borderRadius: '4px',
+                  boxSizing: 'border-box'
+                }}
+              />
+            </div>
+          </div>
 
-          <TextField
-            fullWidth
-            label="Subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-            sx={{ mb: 2 }}
-          />
+          <div style={{ marginBottom: '12px' }}>
+            <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.875rem', color: '#666' }}>
+              Subject *
+            </label>
+            <input
+              type="text"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+              style={{
+                width: '100%',
+                padding: '10px',
+                fontSize: '1rem',
+                border: '1px solid #ccc',
+                borderRadius: '4px',
+                boxSizing: 'border-box'
+              }}
+            />
+          </div>
 
-          <TextField
-            fullWidth
-            label="Message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            multiline
-            rows={6}
-            sx={{ mb: 3 }}
-          />
+          <div style={{ marginBottom: '16px' }}>
+            <label style={{ display: 'block', marginBottom: '6px', fontSize: '0.875rem', color: '#666' }}>
+              Message *
+            </label>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows={4}
+              style={{
+                width: '100%',
+                padding: '10px',
+                fontSize: '1rem',
+                border: '1px solid #ccc',
+                borderRadius: '4px',
+                boxSizing: 'border-box',
+                fontFamily: 'inherit',
+                resize: 'vertical'
+              }}
+            />
+          </div>
 
-          <Button
+          <button
             type="submit"
-            variant="contained"
-            endIcon={<SendIcon />}
-            size="large"
-            fullWidth
+            style={{
+              padding: '10px 24px',
+              fontSize: '1rem',
+              backgroundColor: '#c3c4c6',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontWeight: 500,
+              transition: 'background-color 0.2s'
+            }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = '#a0a1a3'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = '#c3c4c6'}
           >
-            Send Message
-          </Button>
+            send message →
+          </button>
         </form>
-      </Paper>
-    </Box>
+      </div>
+    </div>
   )
 }
 

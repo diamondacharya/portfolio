@@ -30,7 +30,7 @@ const sections = [
   { id: 'about', label: 'About' },
   { id: 'education', label: 'Education' },
   { id: 'experience', label: 'Experience' },
-  { id: 'skills', label: 'Skills' },
+  // { id: 'skills', label: 'Skills' },
   { id: 'contact', label: 'Contact' },
 ]
 
@@ -101,10 +101,11 @@ const App = () => {
         position="fixed"
         elevation={1}
         sx={{
-          backgroundColor: '#2c3e50',
+          backgroundColor: '#c3c4c6',
           transition: 'top 0.3s',
           top: showAppBar ? 0 : '-64px',
-          display: { xs: 'block', md: 'block' }
+          display: { xs: 'block', md: 'block' },
+          boxShadow: '0 1px 5px rgba(44, 62, 80, 0.3)'
         }}
       >
         <Container maxWidth="md">
@@ -132,9 +133,9 @@ const App = () => {
                   <Button
                     key={section.id}
                     onClick={() => handleScroll(refMap[section.id])}
-                    sx={{ mx: 1, color: 'white' }}
+                    sx={{ mx: 1, color: 'black', fontWeight: 500, fontSize: '19px', textTransform: 'none' }}
                   >
-                    {section.label}
+                    {section.label.toLowerCase()}
                   </Button>
                 )
               })}
@@ -211,19 +212,19 @@ const App = () => {
             <h1>Diamond Acharya</h1>
             <h2>Software Engineer</h2>
           </section>
-          <section ref={aboutRef}>
+          <section ref={aboutRef} className='non-hero-section'>
             <About />
           </section>
-          <section ref={educationRef}>
+          <section ref={educationRef} className='non-hero-section'>
             <Education />
           </section>
-          <section ref={experienceRef}>
+          <section ref={experienceRef} className='non-hero-section'>
             <Experience />
           </section>
-          {/* <section ref={skillsRef}>
+          {/* <section ref={skillsRef} className='non-hero-section'>
             <Skills />
           </section> */}
-          <section ref={contactRef}>
+          <section ref={contactRef} className='non-hero-section'>
             <Contact />
           </section>
         </main>

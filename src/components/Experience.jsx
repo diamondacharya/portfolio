@@ -1,66 +1,64 @@
-import { Box, Typography, Card, CardContent, Grid } from '@mui/material'
+
 
 const experiences = [
   {
     title: 'Software Engineer III',
     company: 'Pizza Hut',
+    logo: '/pizzahut.svg',
     location: 'Dallas, TX',
     dates: 'Sept 2022 - Present',
-    description:
-      "Leading the charge on a full-stack platform that gives franchise owners across the country control of their menus. The system handles everything from pricing tweaks to promotional campaigns, and has basically eliminated the flood of support tickets that used to come through. It's been a fun challenge balancing performance with scale—keeping APIs snappy while supporting thousands of restaurants.",
+    // description: "Leading the charge on a full-stack platform that gives franchise owners across the country control of their menus. The system handles everything from pricing tweaks to promotional campaigns, and has basically eliminated the flood of support tickets that used to come through. It's been a fun challenge balancing performance with scale—keeping APIs snappy while supporting thousands of restaurants.",
+    description: "Full stack deevelopment \n [Java, Spring Boot, TypeScript, React, PostgreSQL]",
   },
   {
     title: 'Okta / IAM Technical Consultant',
     company: 'Active Cyber',
+    logo: '/activecyber.png',
     location: 'Dallas, TX',
     dates: 'July 2021 - April 2022',
-    description:
-      "Spent my days deep in identity and access management, helping companies lock down their authentication flows. Whether it was connecting Active Directory to the cloud or setting up single sign-on for thousands of employees, the goal was always the same: make security seamless. Got to work with some interesting tech stacks and learned a ton about enterprise architecture.",
+    // description: "Spent my days deep in identity and access management, helping companies lock down their authentication flows. Whether it was connecting Active Directory to the cloud or setting up single sign-on for thousands of employees, the goal was always the same: make security seamless. Got to work with some interesting tech stacks and learned a ton about enterprise architecture.",
+    description: "Identity and Access Management \n [SAML, OAuth, OIDC]",
   },
 ]
 
 const Experience = () => {
   return (
-    <Box sx={{ my: 6, maxWidth: 1000, mx: 0 }}>
-      <Typography variant="h4" component="h3" gutterBottom sx={{ fontWeight: 500, letterSpacing: '-0.5px', mb: 4 }}>
-        Experience
-      </Typography>
-      <Grid container spacing={3}>
+    <div style={{ margin: '48px 0', maxWidth: '1000px', paddingTop: '52px' }}>
+      <div className="section-header">
+        &lt;&lt; Experience &gt;&gt;
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '24px' }}>
         {experiences.map((exp, index) => (
-          <Grid item xs={12} md={6} key={index}>
-            <Card
-              sx={{
-                height: '100%',
-                boxShadow: 2,
-                transition: 'transform 0.2s, box-shadow 0.2s',
-                '&:hover': {
-                  transform: 'translateY(-4px)',
-                  boxShadow: 4,
-                },
-              }}
-            >
-              <CardContent sx={{ p: 3 }}>
-                <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5 }}>
+          <div key={index} className="card">
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
+              <img
+                src={exp.logo}
+                alt={`${exp.company} Logo`}
+                style={{ width: 60, height: 60, marginRight: 16, objectFit: 'contain' }}
+              />
+              <div>
+                <h4 style={{ fontWeight: 600, margin: 0 }}>
                   {exp.title}
-                </Typography>
-                <Typography variant="subtitle1" color="primary" sx={{ fontWeight: 500, mb: 0.5 }}>
+                </h4>
+                <p style={{ color: '#173757', fontWeight: 500, margin: '4px 0 0 0', fontSize: '0.875rem' }}>
                   {exp.company}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
-                  {exp.location}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                  {exp.dates}
-                </Typography>
-                <Typography variant="body2" sx={{ lineHeight: 1.7 }}>
-                  {exp.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+                </p>
+              </div>
+            </div>
+            
+            <p style={{ fontSize: '0.875rem', color: '#666', marginBottom: '4px', marginTop: 0 }}>
+              {exp.location}
+            </p>
+            <p style={{ fontSize: '0.875rem', color: '#666', marginBottom: '16px', marginTop: 0 }}>
+              {exp.dates}
+            </p>
+            <p style={{ fontSize: '0.875rem', lineHeight: 1.7, marginTop: 0, color: '#666' }}>
+              {exp.description}
+            </p>
+          </div>
         ))}
-      </Grid>
-    </Box>
+      </div>
+    </div>
   )
 }
 
