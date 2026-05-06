@@ -228,6 +228,16 @@ const App = () => {
             <Contact />
           </section>
         </main>
+        <footer style={{
+          textAlign: 'center',
+          padding: '32px 0',
+          marginTop: '48px',
+          color: '#666',
+          fontSize: '0.875rem',
+          borderTop: '1px solid #ddd'
+        }}>
+          Copyright © 2026 All rights reserved. Made by Diamond Acharya
+        </footer>
       </div>
     </>
   )
