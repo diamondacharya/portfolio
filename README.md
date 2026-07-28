@@ -1,6 +1,6 @@
 # Introduction
 
-This repository represents my portfolio. It's hosted with GitHub Pages at https://www.diamonacharya.com. 
+This repository represents my portfolio. It's hosted with GitHub Pages. 
 
 ## Technical Details 
 - Had to install the 'gh-pages' npm package. Running the command 'gh-pages -d dist' pushes the files in your 'dist' folder to the 'gh-pages' branch of your repository. This branch is automatically created when this command is first run. 
