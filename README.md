@@ -9,7 +9,7 @@ GitHub Pages Settings section of my GitHub repo. GitHub provided me the option t
 
 ## How to deploy 
 
-Run the 'yarn deploy' command from the main branch -- this is an alias to the 'gh-pages -d dist' command. This first builds the application by running the 'yarn predeploy' command. The production ready build output is placed in the 'dist' folder. The contents of this dist folder are then pusehd to the gh-pages branch of your repository. This almost immediately updates your production site. 
+Run the 'yarn deploy' command from the main branch -- this is an alias to the 'gh-pages -d dist' command. This first builds the application by running the 'yarn predeploy' command. The production ready build output is placed in the 'dist' folder. The contents of this dist folder are then pushed to the gh-pages branch of the repository. This almost immediately updates the production site. 
 
 # React + Vite
 
