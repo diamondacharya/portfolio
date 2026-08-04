@@ -66,11 +66,16 @@ const Education = () => {
             <div style={{ flex: 1 }}>
               <div
                 onClick={() => setExpandedMasters(!expandedMasters)}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f0f0f0'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   cursor: 'pointer',
-                  marginBottom: '8px'
+                  marginBottom: '8px',
+                  padding: '6px 0',
+                  borderRadius: '4px',
+                  transition: 'background-color 0.2s'
                 }}
               >
                 <p style={{ fontWeight: 600, fontSize: '0.875rem', margin: 0 }}>
@@ -144,12 +149,17 @@ const Education = () => {
 
           <div
             onClick={() => setExpandedBachelors(!expandedBachelors)}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f0f0f0'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
             style={{
               display: 'flex',
               alignItems: 'center',
               cursor: 'pointer',
               marginTop: '16px',
-              marginBottom: '8px'
+              marginBottom: '8px',
+              padding: '6px 0',
+              borderRadius: '4px',
+              transition: 'background-color 0.2s'
             }}
           >
             <p style={{ fontWeight: 600, fontSize: '0.875rem', margin: 0 }}>
