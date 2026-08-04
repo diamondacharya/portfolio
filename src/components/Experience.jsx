@@ -11,7 +11,7 @@ const experiences = [
     description: "Full stack deevelopment \n [Java, Spring Boot, TypeScript, React, PostgreSQL]",
   },
   {
-    title: 'Okta / IAM Technical Consultant',
+    title: 'Okta Technical Consultant',
     company: 'Active Cyber',
     logo: '/activecyber.png',
     location: 'Dallas, TX',

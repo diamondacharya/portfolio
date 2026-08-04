@@ -1,40 +1,35 @@
 import { useState } from 'react'
 
-const mastersCoursesTaken = [
+const mastersCourses = [
+  { name: 'Graduate Algorithms', url: 'https://omscs.gatech.edu/cs-6515-intro-graduate-algorithms' },
   { name: 'Operating Systems', url: 'https://omscs.gatech.edu/cs-6200-introduction-operating-systems' },
   { name: 'Computer Networks', url: 'https://omscs.gatech.edu/cs-6250-computer-networks' },
   { name: 'Information Security', url: 'https://omscs.gatech.edu/cs-6035-introduction-information-security' },
   { name: 'Database Systems Concepts and Design', url: 'https://omscs.gatech.edu/cs-6400-database-systems-concepts-and-design' },
   { name: 'Applied Cryptography', url: 'https://omscs.gatech.edu/cs-6260-applied-cryptography' },
   { name: 'Machine Learning for Trading', url: 'https://omscs.gatech.edu/cs-7646-machine-learning-trading' },
-]
-
-const mastersCoursesPlanned = [
-  { name: 'Graduate Algorithms', url: 'https://omscs.gatech.edu/cs-6515-intro-graduate-algorithms' },
-  { name: 'High Performance Computer Architecture', url: 'https://omscs.gatech.edu/cs-6290-high-performance-computer-architecture' },
   { name: 'Software Development Process', url: 'https://omscs.gatech.edu/cs-6300-software-development-process' },
   { name: 'Human-Computer Interaction', url: 'https://omscs.gatech.edu/cs-6750-human-computer-interaction' },
 ]
 
 const bachelorsCourses = [
-  { name: 'Algorithms and Data Structures', url: 'https://registrar.princeton.edu/course-offerings' },
-  { name: 'Introduction to Programming Systems', url: 'https://registrar.princeton.edu/course-offerings' },
-  { name: 'Linear Algebra with Applications', url: 'https://registrar.princeton.edu/course-offerings' },
-  { name: 'Multivariable Calculus', url: 'https://registrar.princeton.edu/course-offerings' },
-  { name: 'Advanced Programming Techniques', url: 'https://registrar.princeton.edu/course-offerings' },
-  { name: 'Economics and Computing', url: 'https://registrar.princeton.edu/course-offerings' },
-  { name: 'Fundamentals of Machine Learning', url: 'https://registrar.princeton.edu/course-offerings' },
-  { name: 'Introduction to Machine Translation', url: 'https://registrar.princeton.edu/course-offerings' },
-  { name: 'Contemporary Logic Design', url: 'https://registrar.princeton.edu/course-offerings' },
+  { name: 'Algorithms and Data Structures', url: 'https://registrar.princeton.edu/course-offerings/course-details?term=1272&courseid=002054' },
+  { name: 'Principles of Computer System Design', url: 'https://registrar.princeton.edu/course-offerings/course-details?term=1272&courseid=015166' },
+  { name: 'Advanced Programming Techniques', url: 'https://registrar.princeton.edu/course-offerings/course-details?term=1272&courseid=002065' },
+  { name: 'Introduction to Programming Systems', url: 'https://registrar.princeton.edu/course-offerings/course-details?term=1272&courseid=002053' },
+  { name: 'Linear Algebra with Applications', url: 'https://registrar.princeton.edu/course-offerings/course-details?term=1272&courseid=004150' },
+  { name: 'Multivariable Calculus', url: 'https://registrar.princeton.edu/course-offerings/course-details?term=1272&courseid=004149' },
+  { name: 'Economics and Computing', url: 'https://registrar.princeton.edu/course-offerings/course-details?term=1264&courseid=012095' },
+  { name: 'Fundamentals of Machine Learning', url: 'https://registrar.princeton.edu/course-offerings/course-details?term=1272&courseid=014294' },
+  { name: 'Introduction to Machine Translation', url: 'https://registrar.princeton.edu/course-offerings/course-details?term=1264&courseid=010983' },
+  { name: 'Contemporary Logic Design', url: 'https://registrar.princeton.edu/course-offerings/course-details?term=1272&courseid=002463' },
+  { name: 'Fundamentals of Statistics', url: 'https://registrar.princeton.edu/course-offerings/course-details?term=1272&courseid=007996' },
   { name: 'The Mathematics of Secrecy, Search, and Society', url: 'https://registrar.princeton.edu/course-offerings' },
-  { name: 'Fundamentals of Statistics', url: 'https://registrar.princeton.edu/course-offerings' },
-  { name: 'Principles of Computer System Design', url: 'https://registrar.princeton.edu/course-offerings' },
 ]
 
 const Education = () => {
   const [expandedBachelors, setExpandedBachelors] = useState(false)
-  const [expandedMastersTaken, setExpandedMastersTaken] = useState(false)
-  const [expandedMastersPlanned, setExpandedMastersPlanned] = useState(false)
+  const [expandedMasters, setExpandedMasters] = useState(false)
 
   return (
     <div style={{ margin: '48px 0', maxWidth: '1400px' }}>
@@ -70,7 +65,7 @@ const Education = () => {
             {/* Courses Taken */}
             <div style={{ flex: 1 }}>
               <div
-                onClick={() => setExpandedMastersTaken(!expandedMastersTaken)}
+                onClick={() => setExpandedMasters(!expandedMasters)}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -79,11 +74,11 @@ const Education = () => {
                 }}
               >
                 <p style={{ fontWeight: 600, fontSize: '0.875rem', margin: 0 }}>
-                  Courses Taken
+                Relevant Coursework
                 </p>
                 <span style={{
                   marginLeft: '8px',
-                  transform: expandedMastersTaken ? 'rotate(190deg)' : 'rotate(0deg)',
+                  transform: expandedMasters ? 'rotate(190deg)' : 'rotate(0deg)',
                   transition: 'transform 0.3s',
                   display: 'inline-block',
                   fontSize: '0.75rem'
@@ -92,10 +87,10 @@ const Education = () => {
                 </span>
               </div>
 
-              {expandedMastersTaken && (
+              {expandedMasters && (
                 <div style={{ marginTop: '8px' }}>
-                  {mastersCoursesTaken.map((course) => (
-                    <div key={course.name} style={{ marginBottom: '4px' }}>
+                  {mastersCourses.map((course) => (
+                    <div key={course.name} style={{ borderBottom: '1px solid rgb(193, 190, 190)' }}>
                       <a
                         href={course.url}
                         target="_blank"
@@ -104,63 +99,8 @@ const Education = () => {
                           color: '#0d47a1',
                           fontSize: '0.875rem',
                           textDecoration: 'none',
-                          display: 'inline-block',
-                          padding: '4px 8px',
-                          margin: '-4px -8px',
-                          borderRadius: '4px',
-                          transition: 'background-color 0.2s'
-                        }}
-                        onMouseEnter={(e) => e.target.style.backgroundColor = '#f0f0f0'}
-                        onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
-                      >
-                        {course.name}
-                      </a>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Courses Planned */}
-            <div style={{ flex: 1 }}>
-              <div
-                onClick={() => setExpandedMastersPlanned(!expandedMastersPlanned)}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  cursor: 'pointer',
-                  marginBottom: '8px'
-                }}
-              >
-                <p style={{ fontWeight: 600, fontSize: '0.875rem', margin: 0 }}>
-                  Courses Planned
-                </p>
-                <span style={{
-                  marginLeft: '8px',
-                  transform: expandedMastersPlanned ? 'rotate(190deg)' : 'rotate(0deg)',
-                  transition: 'transform 0.3s',
-                  display: 'inline-block',
-                  fontSize: '0.75rem'
-                }}>
-                  ▼
-                </span>
-              </div>
-
-              {expandedMastersPlanned && (
-                <div style={{ marginTop: '8px' }}>
-                  {mastersCoursesPlanned.map((course) => (
-                    <div key={course.name} style={{ marginBottom: '4px' }}>
-                      <a
-                        href={course.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ 
-                          color: '#0d47a1',
-                          fontSize: '0.875rem',
-                          textDecoration: 'none',
-                          display: 'inline-block',
-                          padding: '4px 8px',
-                          margin: '-4px -8px',
+                          display: 'block',
+                          padding: '6px 0',
                           borderRadius: '4px',
                           transition: 'background-color 0.2s'
                         }}
@@ -227,14 +167,9 @@ const Education = () => {
           </div>
 
           {expandedBachelors && (
-            <div style={{ 
-              marginTop: '8px',
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '8px 16px'
-            }}>
+            <div>
               {bachelorsCourses.map((course) => (
-                <div key={course.name} style={{ marginBottom: '4px' }}>
+                <div key={course.name} style={{ borderBottom: '1px solid rgb(193, 190, 190)' }}>
                   <a
                     href={course.url}
                     target="_blank"
@@ -243,9 +178,8 @@ const Education = () => {
                       color: '#0d47a1',
                       fontSize: '0.875rem',
                       textDecoration: 'none',
-                      display: 'inline-block',
-                      padding: '4px 8px',
-                      margin: '-4px -8px',
+                      display: 'block',
+                      padding: '6px 0',
                       borderRadius: '4px',
                       transition: 'background-color 0.2s'
                     }}
