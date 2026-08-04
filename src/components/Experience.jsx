@@ -1,4 +1,5 @@
 
+import Chip from '@mui/material/Chip'
 
 const experiences = [
   {
@@ -7,8 +8,8 @@ const experiences = [
     logo: '/pizzahut.svg',
     location: 'Dallas, TX',
     dates: 'Sept 2022 - Present',
-    // description: "Leading the charge on a full-stack platform that gives franchise owners across the country control of their menus. The system handles everything from pricing tweaks to promotional campaigns, and has basically eliminated the flood of support tickets that used to come through. It's been a fun challenge balancing performance with scale—keeping APIs snappy while supporting thousands of restaurants.",
-    description: "Full stack deevelopment \n [Java, Spring Boot, TypeScript, React, PostgreSQL]",
+    description: "Designed and built a self-service menu management platform for 6,000+ U.S. franchise restaurants, reducing support ticket volume by over 95%. Optimized database queries and backend logic to achieve sub-200ms response times for most endpoints.",
+    tech: ['Java', 'Spring Boot', 'TypeScript', 'React', 'PostgreSQL', 'AWS'],
   },
   {
     title: 'Okta Technical Consultant',
@@ -16,8 +17,8 @@ const experiences = [
     logo: '/activecyber.png',
     location: 'Dallas, TX',
     dates: 'July 2021 - April 2022',
-    // description: "Spent my days deep in identity and access management, helping companies lock down their authentication flows. Whether it was connecting Active Directory to the cloud or setting up single sign-on for thousands of employees, the goal was always the same: make security seamless. Got to work with some interesting tech stacks and learned a ton about enterprise architecture.",
-    description: "Identity and Access Management \n [SAML, OAuth, OIDC]",
+    description: "Consulted on 15+ enterprise Okta integration engagements, implementing SSO and HR-as-Source workflows using OIDC, OAuth 2.0, and SAML. This enabled secure Identity and Access Management systems for clients, supporting over 10,000 users.",
+    tech: ['Okta', 'SAML', 'OAuth 2.0', 'OIDC'],
   },
 ]
 
@@ -29,7 +30,7 @@ const Experience = () => {
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '24px' }}>
         {experiences.map((exp, index) => (
-          <div key={index} className="card">
+          <div key={index} className="card" style={{ paddingBottom: '0px' }}>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
               <img
                 src={exp.logo}
@@ -52,9 +53,14 @@ const Experience = () => {
             <p style={{ fontSize: '0.875rem', color: '#666', marginBottom: '16px', marginTop: 0 }}>
               {exp.dates}
             </p>
-            <p style={{ fontSize: '0.875rem', lineHeight: 1.7, marginTop: 0, color: '#666' }}>
+            <p style={{ fontSize: '0.875rem', lineHeight: 1.7, marginTop: 0, marginBottom: '26px', color: '#444' }}>
               {exp.description}
             </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px'}}>
+              {exp.tech.map(t => (
+                <Chip key={t} label={t} variant="outlined" style={{ fontSize: '0.8rem' }} />
+              ))}
+            </div>
           </div>
         ))}
       </div>

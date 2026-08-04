@@ -39,8 +39,8 @@ const Education = () => {
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
         {/* Master's */}
-        <div className="card">
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
+        <div className="card" style={{ paddingBottom: '0px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px'}}>
             <img
               src="/gatech-gt.png"
               alt="Georgia Tech Logo"
@@ -123,7 +123,7 @@ const Education = () => {
         </div>
 
         {/* Bachelor's */}
-        <div className="card">
+        <div className="card" style={{ paddingBottom: '0px' }} >
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
             <img
               src="/princeton-p.png"
